@@ -27,7 +27,10 @@ web_test_repositories()
 
 load("@io_bazel_rules_webtesting//web/versioned:browsers-0.3.2.bzl", "browser_repositories")
 
-browser_repositories(chromium=True, firefox=True)
+browser_repositories(
+    chromium = True,
+    firefox = True,
+)
 
 load("@io_bazel_rules_go//go:deps.bzl", "go_register_toolchains", "go_rules_dependencies")
 
@@ -35,10 +38,12 @@ go_rules_dependencies()
 
 go_register_toolchains()
 
-load("@bazel_gazelle//:deps.bzl", "gazelle_dependencies", "go_repository")
+load("@bazel_gazelle//:deps.bzl", "gazelle_dependencies")
 
 gazelle_dependencies()
 
-load("@io_bazel_rules_webtesting//web:go_repositories.bzl", "go_repositories")
+load("@io_bazel_rules_webtesting//web:go_repositories.bzl", "go_repositories", "go_internal_repositories")
 
 go_repositories()
+
+go_internal_repositories()
