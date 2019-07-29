@@ -8,7 +8,7 @@ go_web_test_suite(
         "@io_bazel_rules_webtesting//browsers:chromium-local",
     ],
     local = True,
-    deps = ["@io_bazel_rules_webtesting//go/webtest:webtest.go"],
+    deps = ["@io_bazel_rules_webtesting//go/webtest:go_default_library"],
 )
 
 go_library(
@@ -18,6 +18,6 @@ go_library(
     visibility = ["//visibility:public"],
     deps = [
         "@com_github_tebeka_selenium//:go_default_library",
-        "@io_bazel_rules_webtesting//go/webtest:webtest.go",
+        "@io_bazel_rules_webtesting//go/webtest:go_default_library",
     ],
 )

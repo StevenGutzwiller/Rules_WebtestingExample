@@ -1,7 +1,7 @@
 load("@bazel_gazelle//:def.bzl", "gazelle")
 
 # gazelle:prefix
-# gazelle:resolve go go github.com/bazelbuild/rules_webtesting/go/webtest @io_bazel_rules_webtesting//go/webtest:webtest.go
+# gazelle:resolve go go github.com/bazelbuild/rules_webtesting/go/webtest @io_bazel_rules_webtesting//go/webtest:go_default_library
 gazelle(
     name = "gazelle",
     command = "fix",
